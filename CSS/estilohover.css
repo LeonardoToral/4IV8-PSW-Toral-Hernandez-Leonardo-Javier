@@ -22,7 +22,8 @@ a{
 body{
     margin: 30px 0;
     font: 22px sans-serif;
-    background: var(--text-color);
+    background: var(--body-bg-color);
+    color: var(--text-color);
 }
 
 hr{
@@ -46,7 +47,7 @@ hr{
 }
 
 .menu a span{
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-out;
 }
 
 .menu a span:first-child{
@@ -74,7 +75,7 @@ hr{
     transform: translateY(100%);
 }
 
-.menu a:hover span:last-child, menu[data-animation] a:hover span:last-child{
+.menu a:hover span:last-child, .menu[data-animation] a:hover span:last-child{
     transform: none;
 }
 
@@ -83,7 +84,7 @@ hr{
     transform: translateY(100%);
 }
 
-.menu[data-animation="to-top"] a span:first-child{
+.menu[data-animation="to-top"] a:hover span:first-child{
     transform: translateY(-100%);
 }
 
@@ -91,22 +92,22 @@ hr{
     transform: translateX(100%);
 }
 
-.menu[data-animation="to-right"] a span:first-child{
+.menu[data-animation="to-right"] a:hover span:first-child{
     transform: translateX(-100%);
 }
 
 .menu[data-animation="to-left"] a span:last-child{
-    transform: translateX(100%);
+    transform: translateX(-100%);
 }
 
-.menu[data-animation="to-left"] a span:first-child{
-    transform: translateX(-100%);
+.menu[data-animation="to-left"] a:hover span:first-child{
+    transform: translateX(100%);
 }
 
 /*Las patitas*/
 
 .page-footer{
-    position: absolute;
+    position:absolute;
     bottom: 10px;
     right: 10px;
     font-size: 1rem;
