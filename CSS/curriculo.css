@@ -1,0 +1,50 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+html, body{
+    background-color: #81E6A7;
+    font: 18px arial;
+}
+
+.main-container{
+    margin: 2rem;
+    text-align: center;
+}
+
+.container{
+    margin: 3rem;
+    border: 4px solid black;
+    border-radius: 20px;
+    background-color: #81B4FC;
+}
+.left{
+    margin-top: 3rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-bottom: 2rem;
+    float: left;
+}
+
+.right{
+    margin-top: 2rem;
+    margin-right: 5rem;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    text-align: justify;
+}
+
+table, th, td{
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+table{
+    width: 80%;
+}
+
+th{
+    width: 20%;
+}
