@@ -1,6 +1,6 @@
 function validar(e){
     var teclado = (document.all)?e.keyCode:e.which;
-    if((teclado>=65&&teclado<=90)||teclado==32){
+    if((teclado>=65&&teclado<=90)||teclado==44){
         return true;
     }
     return false;
@@ -82,16 +82,16 @@ function problema2(){
 function validarentrada(palabra){
     var longitud = palabra.length;
     for(var i=0;i<longitud;i++){
-        if((i==0&&palabra.charCodeAt(i)==32)||(i==longitud-1&&palabra.charCodeAt(i)==32)||(palabra.charCodeAt(i)==32&&palabra.charCodeAt(i-1)==32)){
+        if((i==0&&palabra.charCodeAt(i)==44)||(i==longitud-1&&palabra.charCodeAt(i)==44)||(i!=0&&i!=longitud-1&&palabra.charCodeAt(i)==44&&palabra.charCodeAt(i-1)==44)){
             if(i==0){
-                alert("No debe de haber espacios al inicio de la entrada");
+                alert("No debe de haber una coma al inicio de la entrada");
             }
             else{
                 if(i==longitud-1){
-                    alert("No debe de haber espacios al final de la cadena");
+                    alert("No debe de haber una coma al final de la cadena");
                 }
                 else{
-                    alert("No debe de haber más de un espacio entre palabras");
+                    alert("No debe de haber más de una coma entre palabras");
                 }
             }
             return false;
@@ -111,7 +111,7 @@ function problema3(){
     var aux_array;
     var bandera;
     if(validarentrada(p3_input)){
-        p3_array = p3_input.split(' ');
+        p3_array = p3_input.split(',');
         p3_array.forEach(function (palabra){
             for(var j=0;j<26;j++){
                 cubeta[j] = false;
