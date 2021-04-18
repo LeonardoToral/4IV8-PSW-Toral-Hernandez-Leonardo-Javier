@@ -110,53 +110,59 @@ function problema3(){
     var auxiliar2=0;
     var aux_array;
     var bandera;
-    if(validarentrada(p3_input)){
-        p3_array = p3_input.split(',');
-        p3_array.forEach(function (palabra){
-            for(var j=0;j<26;j++){
-                cubeta[j] = false;
-            }
-            auxiliar = 0;
-            longitud = palabra.length;
-            for(var j=0;j<longitud;j++){
-                if(!cubeta[palabra.charCodeAt(j)-65]){
-                    auxiliar++;
-                    cubeta[palabra.charCodeAt(j)-65] = true;
-                }
-            }
-            if(auxiliar>maximo){
-                respuesta = palabra;
-                maximo = auxiliar;
-                auxiliar2 = 1;
-            }
-            else{
-                bandera = true;
-                aux_array = respuesta.split(' ');
-                //Esto nos va a ayudar a que no se repitan palabras que pueden ser la posible respuesta
-                aux_array.forEach(function(palabra_aux){
-                    if(palabra_aux==palabra){
-                        bandera = false;
-                    }
-                })
-                if(bandera == true){
-                    if(auxiliar==maximo){
-                        auxiliar2++;
-                        if(auxiliar2==2){
-                            respuesta+=" y ";
-                            respuesta+=palabra;
-                        }
-                        else{
-                            respuesta = palabra + " , " + respuesta;
-                        }
-                    }
-                }
-            }
-        });
-        document.querySelector('#p3-output').textContent = 'La respuesta es: ' + respuesta;
-    }
-    else{
+    if(p3_input==""){
+        alert("El campo de entrada no debe de estar vacío");
         document.querySelector('#p3-input').value = "";
         document.querySelector('#p3-output').textContent = 'Esperando respuesta ...';
     }
-
+    else{
+        if(validarentrada(p3_input)){
+            p3_array = p3_input.split(',');
+            p3_array.forEach(function (palabra){
+                for(var j=0;j<26;j++){
+                    cubeta[j] = false;
+                }
+                auxiliar = 0;
+                longitud = palabra.length;
+                for(var j=0;j<longitud;j++){
+                    if(!cubeta[palabra.charCodeAt(j)-65]){
+                        auxiliar++;
+                        cubeta[palabra.charCodeAt(j)-65] = true;
+                    }
+                }
+                if(auxiliar>maximo){
+                    respuesta = palabra;
+                    maximo = auxiliar;
+                    auxiliar2 = 1;
+                }
+                else{
+                    bandera = true;
+                    aux_array = respuesta.split(' ');
+                    //Esto nos va a ayudar a que no se repitan palabras que pueden ser la posible respuesta
+                    aux_array.forEach(function(palabra_aux){
+                        if(palabra_aux==palabra){
+                            bandera = false;
+                        }
+                    });
+                    if(bandera == true){
+                        if(auxiliar==maximo){
+                            auxiliar2++;
+                            if(auxiliar2==2){
+                                respuesta+=" y ";
+                                respuesta+=palabra;
+                            }
+                            else{
+                                respuesta = palabra + " , " + respuesta;
+                            }
+                        }
+                    }
+                }
+            });
+            document.querySelector('#p3-output').textContent = 'La respuesta es: ' + respuesta;
+        }
+        else{
+            document.querySelector('#p3-input').value = "";
+            document.querySelector('#p3-output').textContent = 'Esperando respuesta ...';
+        }
+    }
 }
