@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Registro de Usuarios</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/Estilo.css">
+    </head>
+    <body>
+        <script src="JS/Validacion.js"></script>
+        <div >
+            
+            <div class="container">
+                <h2>Registrar nuevo usuario</h2>
+                <form name="formulario" method="post" action="Registro" onsubmit="return validarRegistro(this)">
+                    <table>
+                        <tr>
+                            <td><label>Nombre:</label></td>
+                            <td><input type="text" name="nombre" ></td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td><label>Apellido Paterno:</label></td>
+                            <td><input type="text" name="appat" ></td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td><label>Apellido Materno:</label></td>
+                            <td><input type="text" name="apmat" ></td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td><label>Edad:</label></td>
+                            <td><input type="number" name="edad" min="01" max="99" size="2" ></td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td><label>Correo:</label></td>
+                            <td><input type="email" name="correo" ></td>
+                        </tr>                        
+                        <br>
+                        <tr>
+                            <td><input type="submit" value="Registro de Usuarios" ></td>
+                            <td><input type="reset" value="Borrar Registro" ></td>
+                        </tr>    
+                    </table>
+                </form>
+            </div>
+            <br>
+            <div class="container" >
+                <h2>Consultar usuarios en la base de datos</h2>
+                <br>
+                <form method="get" name="consultarR" action="Consultar">
+                    <input type="submit" value="Consultar Tabla de Usuarios" >
+                </form>
+            </div>
+            <br>
+            <div class="container" >
+                <h2>Eliminar usuario</h2>
+                <br>
+                <form method="post" name="formularioE" action="Eliminar" onsubmit="return validarE(this)">
+                    <label>ID del Usuario a Eliminar</label>
+                    <input type="number" name="ideliminar" min="01">
+                    <br>
+                    <input type="submit" value="Eliminar Usuario" >
+                </form>
+                
+            </div>
+            
+            <br>
+            
+            <div class="container">
+                <h2>Actualizar datos de un usuario</h2>
+                <br>
+                <form method="post" name="formularioA" action="Actualizar" onsubmit="return validar(this)">
+                    <table>
+                        <tr>
+                            <td><label>ID del Usuario a Actualizar:</label></td>
+                            <td><input type="number" name="id_act" min="01"></td>
+                        </tr> 
+                        <br>
+                        <tr>
+                            <td><label>Nombre:</label></td>
+                            <td><input type="text" name="nom_act"></td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td><label>Apellido Paterno:</label></td>
+                            <td><input type="text" name="appat_act"></td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td><label>Apellido Materno:</label></td>
+                            <td><input type="text" name="apmat_act"></td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td><label>Edad:</label></td>
+                            <td><input type="number" name="eda_act" min="01" max="99" size="2"></td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td><label>Correo:</label></td>
+                            <td><input type="email" name="cor_act"></td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td><input type="submit" value="Actualizar Usuario"></td>
+                            <td><input type="reset" name="Borrar Actualizacion"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            
+            
+            
+        </div>
+    </body>
+</html>

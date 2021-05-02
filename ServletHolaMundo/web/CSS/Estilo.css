@@ -1,0 +1,58 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 1/05/2021, 06:39:41 PM
+    Author     : MARIA DEL REFUGIO
+*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    background-color:blanchedalmond;
+}
+
+.container{
+    margin: 1rem;
+    border: 4px solid black;
+    border-radius: 20px;
+    background-color: #81B4FC;
+    text-align: justify;
+    padding: 2rem;
+}
+
+.input_text{
+    align-items: center;
+    justify-content: center;
+    color: #009900;
+    letter-spacing: 3px;
+}
+
+.td_sup{
+    align-items: left;
+    width: 100;
+    justify-content: left;
+}
+
+.td_inf{
+    align-items: center;
+    justify-content: center;
+    width: 150;
+}
+
+table{
+    margin: auto;
+}
+
+.abajo{
+    text-align: center;
+}
+
+.derecha{
+    text-align: right;
+}
+
